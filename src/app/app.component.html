@@ -1,0 +1,35 @@
+<div>
+  <app-header></app-header>
+  <div class="content-wrap">
+    <div>
+      <app-score-card
+        [isSelected]="isPlayer1"
+        playerName="Player 1"
+        [score]="player1Score"
+      ></app-score-card>
+    </div>
+    <div class="grid">
+      <app-display-card
+        *ngFor="let card of cards; let idx = index"
+        [card]="card"
+        (selectedCard)="selectedCard(idx)"
+        [cardFlipped]="card.state != 'default'"
+        [allowFlip]="flippedCards.length < 2"
+      ></app-display-card>
+    </div>
+    <app-score-card
+      [isSelected]="!isPlayer1"
+      playerName="Player 2"
+      [score]="player2Score"
+    ></app-score-card>
+  </div>
+</div>
+
+<app-modal
+  *ngIf="showModal"
+  (closeEvent)="showModal = false; startGame()"
+  headerText="Congratulations!"
+  [bodyText]="winnerText"
+  buttonText="Restart game"
+>
+</app-modal>
