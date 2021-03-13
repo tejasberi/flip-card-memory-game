@@ -29,3 +29,12 @@ See: https://en.wikipedia.org/wiki/Concentration_(card_game)
 ## Game Page design
 
 ![](screenshots/page-ui.png)
+
+## Unit test suite
+
+![](screenshots/unit-tests.png)
+
+## Code coverage
+
+![](screenshots/code-coverage.png)
+
