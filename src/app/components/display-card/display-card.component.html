@@ -1,0 +1,12 @@
+<div
+  class="card"
+  (click)="flipCard()"
+  [ngClass]="{ disabled: card.state === 'matched' }"
+>
+  <div class="back" [ngClass]="{ flipped: cardFlipped }">
+    <img src="../../../assets/images/card-bg.png" />
+  </div>
+  <div class="front" [ngClass]="{ flipped: cardFlipped }">
+    <img [src]="card.image" />
+  </div>
+</div>

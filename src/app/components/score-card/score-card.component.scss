@@ -1,0 +1,16 @@
+.container {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 20px;
+  background: #84888c;
+  color: white;
+  border-radius: 5px;
+  margin: 30px;
+  box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
+}
+
+.selected {
+  background: green;
+}

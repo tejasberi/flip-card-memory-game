@@ -1,0 +1,39 @@
+<div
+  class="modal-container"
+  (click)="$event.stopPropagation(); close()"
+  (keyup.esc)="close()"
+>
+  <div
+    tabindex="0"
+    class="hidden-container"
+    aria-describedby="modal-start modal-info"
+  ></div>
+  <div
+    [@slideFromTopAnimation]
+    class="modal-box"
+    (click)="$event.stopPropagation()"
+    (keyup.esc)="$event.stopPropagation(); close()"
+  >
+    <div class="modal-box-header"></div>
+    <div class="modal-box-body">
+      <div class="modal-header">
+        {{ headerText }}
+      </div>
+
+      <div class="modal-box-body__text" modal-scroll>
+        {{ bodyText }}
+      </div>
+      <ng-container>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary btn-close-modal pull-right"
+            (click)="close()"
+          >
+            {{ buttonText }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
