@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Download the repo on local machine
 - run command `npm i`
 - run command `npm start`
+- launch `http://localhost:4200/` in the browser
 
 ## Build
 
