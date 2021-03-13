@@ -20,11 +20,11 @@
         {{ headerText }}
       </div>
 
-      <div class="modal-box-body__text" modal-scroll>
+      <div class="modal-box-body__text" *ngIf="bodyText">
         {{ bodyText }}
       </div>
       <ng-container>
-        <div class="modal-footer">
+        <div class="modal-footer" *ngIf="buttonText">
           <button
             type="button"
             class="btn btn-primary btn-close-modal pull-right"
@@ -34,6 +34,7 @@
           </button>
         </div>
       </ng-container>
+      <ng-content #name></ng-content>
     </div>
   </div>
 </div>

@@ -11,6 +11,13 @@
   }
 }
 
+.btn-container {
+  text-align: center;
+  button {
+    margin: 25px;
+  }
+}
+
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(3, 150px);

@@ -22,6 +22,7 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    component.enableMultiPlayer();
   });
 
   it('should create', () => {

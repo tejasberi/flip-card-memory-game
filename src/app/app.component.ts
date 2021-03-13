@@ -1,5 +1,5 @@
 import { card } from './interfaces/card.interface';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardStatus } from './constants/card-state.enum';
 
 @Component({
@@ -7,25 +7,36 @@ import { CardStatus } from './constants/card-state.enum';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   cards = new Array(15);
   cardImages = new Array(8);
   flippedCards: card[] = [];
   selectedCardIndex: number[] = [];
   winnerText = '';
+  isSinglePlayer = true;
+  showPlayerModal = true;
   isPlayer1 = true;
   player1Score = 0;
   player2Score = 0;
   showModal = false;
   imageSourceBaseUrl = `https://picsum.photos/200/300?random=`;
 
-  ngOnInit(): void {
-    this.startGame();
+  enableSinglePlayer(): void {
+    this.isSinglePlayer = true;
+    this.initializeGame();
   }
 
-  startGame(): void {
+  enableMultiPlayer(): void {
+    this.isSinglePlayer = false;
+    this.initializeGame();
+  }
+
+  initializeGame(): void {
+    this.showPlayerModal = false;
     this.player1Score = 0;
     this.player2Score = 0;
+    this.cardImages = [];
+    this.cards = [];
     this.generateImages();
     this.generateCards();
   }
@@ -107,13 +118,18 @@ export class AppComponent implements OnInit {
     if (
       this.cards.filter((card) => card.state === CardStatus[2]).length === 14
     ) {
-      this.winnerText =
-        this.player1Score === this.player2Score
-          ? 'Its a tie'
-          : this.player1Score > this.player2Score
-          ? 'PLAYER 1 is the winner'
-          : 'PLAYER 2 is the winner';
-      this.showModal = true;
+      if (!this.isSinglePlayer) {
+        this.winnerText =
+          this.player1Score === this.player2Score
+            ? 'Its a tie'
+            : this.player1Score > this.player2Score
+            ? 'PLAYER 1 is the winner'
+            : 'PLAYER 2 is the winner';
+        this.showModal = true;
+      } else {
+        this.winnerText = 'You have successfully completed the game !!';
+        this.showModal = true;
+      }
     }
   }
 }
