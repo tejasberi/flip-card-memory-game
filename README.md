@@ -25,3 +25,7 @@ Each turn the player turns over two cards. If they are a matching pair they rema
 they don’t match they are turned face down again.
 The game finishes when all the pairs have been removed.
 See: https://en.wikipedia.org/wiki/Concentration_(card_game)
+
+## Game UI
+
+![](screenshots/page-ui.png)
