@@ -24,7 +24,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should display the header', () => {
-    const de = fixture.debugElement.query(By.css('.container'));
+    const de = fixture.debugElement.query(By.css('.header'));
     const el: HTMLElement = de.nativeElement;
     expect(el.innerHTML).toContain('Flip card memory game');
   });
