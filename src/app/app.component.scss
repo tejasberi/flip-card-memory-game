@@ -2,12 +2,31 @@
   display: flex;
   max-width: 1300px;
   margin: 0 auto;
+
+  @media (max-width: 600px) {
+    display: block;
+    .hidden {
+      display: none;
+    }
+    .score-container {
+      display: flex;
+    }
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(5, 160px);
     gap: 25px;
     margin-top: 30px;
     justify-content: center;
+
+    @media (max-width: 600px) and (min-width: 400px) {
+      grid-template-columns: repeat(3, 150px);
+    }
+
+    @media (max-width: 399px) {
+      grid-template-columns: repeat(2, 150px);
+    }
   }
 }
 

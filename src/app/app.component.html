@@ -16,12 +16,19 @@
 <div>
   <app-header></app-header>
   <div class="content-wrap" *ngIf="!showPlayerModal">
-    <div>
+    <div class="score-container">
       <app-score-card
         [ngClass]="{ hidden: isSinglePlayer }"
         [isSelected]="isPlayer1"
         playerName="Player 1"
         [score]="player1Score"
+      ></app-score-card>
+
+      <app-score-card
+        [ngClass]="{ hidden: isSinglePlayer }"
+        [isSelected]="!isPlayer1"
+        playerName="Player 2"
+        [score]="player2Score"
       ></app-score-card>
     </div>
     <div class="grid">
@@ -33,12 +40,7 @@
         [allowFlip]="flippedCards.length < 2"
       ></app-display-card>
     </div>
-    <app-score-card
-      [ngClass]="{ hidden: isSinglePlayer }"
-      [isSelected]="!isPlayer1"
-      playerName="Player 2"
-      [score]="player2Score"
-    ></app-score-card>
+    <div></div>
   </div>
 </div>
 
