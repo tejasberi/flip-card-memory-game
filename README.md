@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
+## Live URL
+
+https://tejasberi.github.io/flip-card-memory-game/
+
 ## Setup
 
 - Download the repo on local machine
