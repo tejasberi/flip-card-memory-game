@@ -32,7 +32,7 @@ See: https://en.wikipedia.org/wiki/Concentration_(card_game)
 
 ## Game Page design
 
-![](screenshots/page-ui.png)
+![](screenshots/page-ui-desktop.png)
 
 ## Unit test suite
 
