@@ -1,3 +1,20 @@
-<div class="container">
-  <h1>Flip card memory game</h1>
+<div class="header">
+  <div class="header-wrap">
+    <h1>Flip card memory game</h1>
+    <button class="btn-primary" (click)="showModal = true">How to play?</button>
+  </div>
+
+  <!-- help modal -->
+  <app-modal
+    *ngIf="showModal"
+    (closeEvent)="showModal = false"
+    headerText="How to play?"
+    bodyText="A number of cards are placed face down in a grid in a random order. The cards have images
+on their face and the cards are in pairs, with each pair having the same image.
+Each turn the player turns over two cards. If they are a matching pair they remain face up. If
+they don’t match they are turned face down again.
+The game finishes when all the pairs have been removed."
+    buttonText="Ok"
+  >
+  </app-modal>
 </div>

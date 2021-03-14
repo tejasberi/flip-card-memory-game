@@ -1,3 +1,4 @@
+<!-- welcome modal -->
 <app-modal
   *ngIf="showPlayerModal"
   (closeEvent)="showModal = false; initializeGame()"
@@ -13,6 +14,7 @@
   </div>
 </app-modal>
 
+<!-- game container -->
 <div>
   <app-header></app-header>
   <div class="content-wrap" *ngIf="!showPlayerModal">
@@ -44,6 +46,7 @@
   </div>
 </div>
 
+<!-- winner modal -->
 <app-modal
   *ngIf="showModal"
   (closeEvent)="showModal = false; showPlayerModal = true"
